@@ -2,7 +2,7 @@
   @Author: Jahangir Ahmad
   @Date:   2021-07-26 18:40:32
   @Last Modified by:   Jahangir Ahmad
-  @Last Modified time: 2021-07-26 20:21:57
+  @Last Modified time: 2021-07-26 20:28:40
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +23,7 @@
         <div class="fish" id="fish"></div>
         <div class="fish" id="fish2"></div>
 
-        <form id="waterform" method="#">
+        <form id="waterform">
 
             <div class="formgroup" id="name-form">
                 <label for="name">File name*</label>
@@ -37,13 +37,15 @@
                     onkeyup="chkIfEmpty()"></textarea>
             </div>
 
-            <input type="submit" id="btn" value="Download" disabled />
+
+
             <div class="formgroup" id="message-form1">
                 <label for="message">Auto Generated Exi File</label>
                 <textarea id="message1" name="message1" placeholder="Auto Generated File" disabled></textarea>
             </div>
 
-
+            <!-- Download -->
+            <input type="submit" id="btn" value="Download" disabled onclick="history.go(0)" />
 
         </form>
     </div>
@@ -61,6 +63,13 @@
                 document.getElementById('btn').disabled = false;
             }
         }
+
+        function autoReload() {
+            location.reload(true);
+        }
+
+
+
     </script>
 
 </body>
