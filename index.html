@@ -2,7 +2,7 @@
   @Author: Jahangir Ahmad
   @Date:   2021-07-26 18:40:32
   @Last Modified by:   Jahangir Ahmad
-  @Last Modified time: 2021-07-26 20:09:41
+  @Last Modified time: 2021-07-26 20:20:15
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -36,12 +36,14 @@
                 <textarea id="message" name="message" placeholder="Input Custom Text Here" style="height: 200px"
                     onkeyup="chkIfEmpty()"></textarea>
             </div>
-            <div class="formgroup" id="message-form">
+
+            <input type="submit" id="btn" value="Download" disabled />
+            <div class="formgroup" id="message-form1">
                 <label for="message">Auto Generated Exi File</label>
                 <textarea id="message1" name="message1" placeholder="Auto Generated File" disabled></textarea>
             </div>
 
-            <input type="submit" id="btn" value="Download" disabled />
+
 
         </form>
     </div>
@@ -50,6 +52,8 @@
     <script src="app.js"></script>
 
     <script type="text/javascript">
+        // Hide the code
+        document.getElementById("message-form1").style.display = "none";
         function chkIfEmpty() {
             if ((document.getElementById("name").value === "") || (document.getElementById('message').value === "")) {
                 document.getElementById('btn').disabled = true;
