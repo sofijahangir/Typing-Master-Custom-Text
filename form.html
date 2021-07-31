@@ -1,0 +1,69 @@
+<!-- 
+  @Author: Jahangir Ahmad
+  @Date:   2021-07-28 17:34:39
+  @Last Modified by:   Jahangir Ahmad
+  @Last Modified time: 31-07-2021 11:46:05
+-->
+<!-- MVP.css quickstart template: https://github.com/andybrewer/mvp/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://via.placeholder.com/70x70">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+
+    <meta charset="utf-8">
+    <meta name="description" content="My description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom Text</title>
+</head>
+
+<body>
+
+    <main>
+        <a href="./index.html"><b>Home</b></a>
+        <form method="#" id="myForm">
+            <label for="input1">File Name:</label>
+
+            <input type="text" id="filename" name="input1" size="20" placeholder="Input File Name" onkeyup="chkIfEmpty()">
+
+
+            <label for="textarea1">Custom Text:</label>
+
+            <textarea cols="60" rows="20" id="textarea1" onkeyup="chkIfEmpty()"></textarea>
+
+            <textarea cols="60" rows="10" id="textarea2" disabled></textarea>
+            <button type="button" id="btn" disabled>Download</button>
+        </form>
+        <a href="./index.html"><i>&larr; Go Back</i></a>
+        </section>
+    </main>
+    <footer>
+        <hr>
+        <p>
+            <small>Jahangir </small>
+        </p>
+    </footer>
+    <script src="app.js"></script>
+    <script type="text/javascript">
+        // Hide the code
+        document.getElementById("textarea2").style.display = "none";
+        function chkIfEmpty() {
+            if ((document.getElementById("filename").value === "") || (document.getElementById('textarea1').value === "")) {
+                document.getElementById('btn').disabled = true;
+            } else {
+                document.getElementById('btn').disabled = false;
+            }
+        }
+
+        function autoReload() {
+            location.reload(true);
+        }
+
+    </script>
+
+</body>
+
+</html>

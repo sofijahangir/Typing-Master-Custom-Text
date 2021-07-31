@@ -1,8 +1,8 @@
 /*
  * @Author: Jahangir Ahmad
- * @Date:   2021-07-26 18:50:12
+ * @Date:   2021-07-29 09:16:08
  * @Last Modified by:   Jahangir Ahmad
- * @Last Modified time: 2021-07-26 19:34:22
+ * @Last Modified time: 31-07-2021 11:40:24
  */
 function download(name, text) {
   var element = document.createElement('a');
@@ -26,7 +26,7 @@ document.getElementById('btn').addEventListener(
   'click',
   function () {
     // Generate download of hello.txt file with some content
-    var filename = document.getElementById('name').value;
+    var filename = document.getElementById('filename').value;
     // var filename = 'hello.txt';
 
     // Check empty file name and text box;
@@ -40,9 +40,9 @@ document.getElementById('btn').addEventListener(
       filename +
       '\n' +
       'language=eng';
-    document.getElementById('message1').value = exiGen;
-    var text = document.getElementById('message').value;
-    var text1 = document.getElementById('message1').value;
+    document.getElementById('textarea2').value = exiGen;
+    var text = document.getElementById('textarea1').value;
+    var text1 = document.getElementById('textarea2').value;
 
     var exmFile = filename + '.exm';
     var exiFile = filename + '.exi';
@@ -51,6 +51,4 @@ document.getElementById('btn').addEventListener(
     download(exiFile, text1);
   },
   false
-
-  // If Text Fields are empty disable the download button
 );
