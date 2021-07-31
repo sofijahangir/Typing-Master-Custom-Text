@@ -2,7 +2,7 @@
   @Author: Jahangir Ahmad
   @Date:   2021-07-28 17:34:39
   @Last Modified by:   Jahangir Ahmad
-  @Last Modified time: 31-07-2021 11:46:05
+  @Last Modified time: 31-07-2021 17:56:59
 -->
 <!-- MVP.css quickstart template: https://github.com/andybrewer/mvp/ -->
 
@@ -54,8 +54,24 @@
             if ((document.getElementById("filename").value === "") || (document.getElementById('textarea1').value === "")) {
                 document.getElementById('btn').disabled = true;
             } else {
+
+
+                var str = document.getElementById('textarea1').value;
+                str = str
+                    .replace('”', '"')
+                    .replace('“', '"')
+                    .replace('’', "'")
+                    .replace('‘', "'")
+                    .replace(/[\u2018\u2019]/g, "'")
+                    .replace(/[\u201C\u201D]/g, '"')
+                    .replace(/[\u2013\u2014]/g, '-')
+                    .replace(/[\u2026]/g, '...');
+                document.getElementById('textarea1').value = str;
                 document.getElementById('btn').disabled = false;
+
             }
+
+
         }
 
         function autoReload() {
