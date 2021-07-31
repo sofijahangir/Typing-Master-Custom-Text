@@ -2,7 +2,7 @@
  * @Author: Jahangir Ahmad
  * @Date:   2021-07-29 09:16:08
  * @Last Modified by:   Jahangir Ahmad
- * @Last Modified time: 31-07-2021 11:40:24
+ * @Last Modified time: 31-07-2021 17:47:51
  */
 function download(name, text) {
   var element = document.createElement('a');
@@ -46,6 +46,19 @@ document.getElementById('btn').addEventListener(
 
     var exmFile = filename + '.exm';
     var exiFile = filename + '.exi';
+
+    var str = document.getElementById('textarea1').value;
+    str = str
+      .replace('”', '"')
+      .replace('“', '"')
+      .replace('’', "'")
+      .replace('‘', "'")
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201C\u201D]/g, '"')
+      .replace(/[\u2013\u2014]/g, '-')
+      .replace(/[\u2026]/g, '...');
+
+    document.getElementById('textarea1').value = str;
 
     download(exmFile, text);
     download(exiFile, text1);
